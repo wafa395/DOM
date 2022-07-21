@@ -21,20 +21,37 @@ function buildNewTodo(value) {
     editButton.textContent = 'edit';
     editButton.classList.add('actions');
     editButton.addEventListener('click', () =>
-        editTodo(randomId));
+        editTodo(randomId));   
+    
 
     // add title and delete and edit to li
     parentLi.append(todoSpanTitle, deleteButton, editButton);
     todoList.append(parentLi);
 }
 
+// *************************************************
 
 function editTodo(randomId) {
     const todoItemee = document.getElementById(`${randomId}`);
+    const sButton = document.getElementById('sBut');
+    const fButton = document.getElementById('fBut');
     const span = todoItemee.firstChild.textContent;
-    console.log(span);
+    // console.log(span);
     document.getElementById('todo-item').value = span;
+    sButton.classList.remove('hidden-item');
+    
+    if (!fButton.classList.contains('hidden-item')) {
+        fButton.classList.add('hidden-item');
+    }
+    function editTodoBut(){
+        span = getElementById('todo-item').value;
+    }
 }
+
+
+// *************************************************
+
+
 
 
 function deleteTodo(randomId) {

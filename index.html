@@ -24,7 +24,12 @@
 		</div>
 		<div id="add-todo">
 			<input id="todo-item" type="text" placeholder=" Add a todo..." />
-			<button onclick="addNewTodo()">Add</button>
+			<div id="fBut">
+				<button onclick="addNewTodo()">Add</button>
+			</div>
+			<div class="hidden-item" id="sBut">
+				<button onclick="editTodoBut()">Edit</button>
+			</div>
 			<small class="hidden-item" id="warning">* you should fill the box</small>
 		</div>	
 	</div>
