@@ -30,24 +30,32 @@ function buildNewTodo(value) {
 }
 
 // *************************************************
+let span;
+const sButton = document.getElementById('sBut');
+const fButton = document.getElementById('fBut');
 
 function editTodo(randomId) {
     const todoItemee = document.getElementById(`${randomId}`);
-    const sButton = document.getElementById('sBut');
-    const fButton = document.getElementById('fBut');
-    const span = todoItemee.firstChild.textContent;
+    
+    span = todoItemee.firstChild;
     // console.log(span);
-    document.getElementById('todo-item').value = span;
+    document.getElementById('todo-item').value = span.textContent;
     sButton.classList.remove('hidden-item');
+    
     
     if (!fButton.classList.contains('hidden-item')) {
         fButton.classList.add('hidden-item');
     }
-    function editTodoBut(){
-        span = getElementById('todo-item').value;
-    }
 }
 
+function editTodoBut() {
+    editableTodoItem = document.getElementById('todo-item');
+    span.textContent = editableTodoItem.value;
+    editableTodoItem.value = ' ';
+    sButton.classList.add('hidden-item');
+    fButton.classList.remove('hidden-item');
+    
+}
 
 // *************************************************
 
