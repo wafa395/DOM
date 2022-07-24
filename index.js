@@ -81,3 +81,24 @@ function addNewTodo() {
     buildNewTodo(todoItemValue);
     todoItem.value = '';
 }
+
+
+function searchTodo(){
+    let input, filter, ul, li, span , txtValue;
+    input = document.getElementById("search-input");
+    filter = input.value.toUpperCase();
+    ul = document.getElementById("main-list");
+    li = ul.getElementsByTagName("li");
+    for (i = 0; i < li.length; i++) {
+        span = li[i].getElementsByTagName("span")[0];
+        txtValue = span.textContent || span.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            li[i].style.display = "";
+        } else {
+            li[i].style.display = "none";
+        }
+    }
+}
+
+
+searchTodo();
